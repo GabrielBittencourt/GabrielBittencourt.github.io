@@ -267,6 +267,11 @@ textarea {
   justify-content: space-between;
 }
 
+.logo{
+  position: relative;
+  left: 5%;
+}
+
 .nav{
   display: flex;
   align-items: center;
