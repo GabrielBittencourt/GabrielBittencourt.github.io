@@ -10,10 +10,12 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
-
+html{
+  scroll-behavior: smooth;
+}
 
 body{
-  color: white;
+  color: #FFFFFF;
   background: rgb(2,0,36);
   background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(0,212,255,1) 50%, rgba(9,9,121,1) 100%);
   font-family: 'Roboto';
@@ -21,6 +23,7 @@ body{
   line-height: 18.75px;
   font-weight: 700;
   text-align: center;
+  
 }
 
 /*
@@ -279,9 +282,13 @@ textarea {
   right: 5%;
 }
 
+.nav-mobile{
+  display: none;
+}
+
 a{
   text-decoration: none;
-  color: white;
+  color: #FFFFFF;
   margin: 10px;
 }
 
@@ -304,6 +311,14 @@ a{
   flex-direction: column;
   align-items: center;
   margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+#projetos{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
 }
 
 .container{
@@ -313,8 +328,87 @@ a{
   justify-content: space-around;
 }
 
+.modal{
+  display: none;
+}
+
 @media screen and (max-width: 500px){
   .container{
     flex-direction: column;
   }
+  .nav{
+    display: none;
+  }
+  .nav-mobile{
+    display: inline-block;
+    cursor: pointer;
+    margin: 5%;
+  }
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #FFFFFF;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+  }
+
+  /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 100%);
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80vw;
+  height: 50vh;
+}
+
+.close {
+  color: #FFF;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.container-bg{
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+}
+.container-bg a{
+  margin: 5vh;
+}
+
 }
