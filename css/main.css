@@ -270,6 +270,8 @@ textarea {
 .nav{
   display: flex;
   align-items: center;
+  position: relative;
+  right: 5%;
 }
 
 a{
